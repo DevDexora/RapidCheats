@@ -24,6 +24,8 @@
                         'dark-card': '#181818',
                         'dark-border': '#262626',
                         'status-green': '#10B981',
+                        'status-yellow': '#F59E0B',
+                        'status-red': '#EF4444',
                     }
                 }
             }
@@ -102,44 +104,111 @@
             <!-- Status Page Content -->
             <div id="status-page" class="page-content hidden">
                  <h2 class="text-lg font-semibold text-white mb-4">STATUS</h2>
-                 <!-- Rainbow Six Siege Category -->
-                 <div class="mb-8">
-                    <h3 class="text-md font-semibold text-gray-300 mb-3">Rainbow Six Siege</h3>
-                    <div class="bg-dark-card border border-dark-border rounded-xl">
-                        <!-- Product Item -->
-                        <div class="flex justify-between items-center p-4 sm:p-6">
-                            <h4 class="font-semibold text-white">Aurora R6 Full</h4>
-                            <div class="flex items-center space-x-2">
-                                <div class="h-2.5 w-2.5 rounded-full bg-status-green"></div>
-                                <span class="text-sm text-gray-400">Online</span>
-                            </div>
-                        </div>
-                    </div>
+                 <div id="status-page-categories" class="space-y-8">
+                    <!-- Product categories and items will be dynamically inserted here -->
                  </div>
             </div>
 
             <!-- Products Page Content -->
             <div id="products-page" class="page-content hidden">
                 <h2 class="text-lg font-semibold text-white mb-4">PRODUCTS</h2>
-                <!-- Rainbow Six Siege Category -->
-                <div class="mb-8">
-                    <h3 class="text-md font-semibold text-gray-300 mb-3">Rainbow Six Siege</h3>
-                    <div class="bg-dark-card border border-dark-border rounded-xl">
-                        <!-- Product Item -->
-                        <div class="flex justify-between items-center p-4 sm:p-6">
-                            <h4 class="font-semibold text-white">Aurora R6 Full</h4>
-                            <div class="flex items-center space-x-2">
-                                <div class="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
-                                <span class="text-sm text-gray-400">Coming Soon</span>
-                            </div>
-                        </div>
-                    </div>
+                <div id="products-page-categories" class="space-y-8">
+                    <!-- Product categories and items will be dynamically inserted here -->
                 </div>
             </div>
         </main>
     </div>
 
     <script>
+        // --- DATA MANAGEMENT ---
+        // Centralized data for all products.
+        // To update a status, change the values here and the page will auto-update.
+        const products = [
+            {
+                id: 'aurora-r6',
+                name: 'Aurora R6 Full',
+                category: 'Rainbow Six Siege',
+                status: 'online', // for status page: 'online', 'offline', 'updating'
+                productStatus: 'coming-soon' // for products page: 'available', 'coming-soon', 'private'
+            },
+            // Future products can be added here
+        ];
+
+        // --- STATUS MAPPING ---
+        // Maps status keys to display text and CSS colors for consistency.
+        const statusMap = {
+            'online': { text: 'Online', color: 'bg-status-green' },
+            'offline': { text: 'Offline', color: 'bg-status-red' },
+            'updating': { text: 'Updating', color: 'bg-status-yellow' },
+            'available': { text: 'Available', color: 'bg-status-green' },
+            'coming-soon': { text: 'Coming Soon', color: 'bg-status-yellow' },
+            'private': { text: 'Private', color: 'bg-gray-500' }
+        };
+
+        // --- DYNAMIC RENDERING ---
+        // This function builds the HTML for the product and status pages from the data above.
+        function renderPages() {
+            const statusContainer = document.getElementById('status-page-categories');
+            const productsContainer = document.getElementById('products-page-categories');
+            
+            // Clear existing content to prevent duplicates
+            statusContainer.innerHTML = '';
+            productsContainer.innerHTML = '';
+
+            // Group products by category
+            const categories = {};
+            for (const product of products) {
+                if (!categories[product.category]) {
+                    categories[product.category] = [];
+                }
+                categories[product.category].push(product);
+            }
+
+            // Generate and insert HTML for each category
+            for (const categoryName in categories) {
+                // --- Build Status Page HTML ---
+                let statusItemsHTML = '';
+                for (const product of categories[categoryName]) {
+                    const statusInfo = statusMap[product.status] || { text: 'Unknown', color: 'bg-gray-500' };
+                    statusItemsHTML += `
+                        <div class="flex justify-between items-center p-4 sm:p-6">
+                            <h4 class="font-semibold text-white">${product.name}</h4>
+                            <div class="flex items-center space-x-2">
+                                <div class="h-2.5 w-2.5 rounded-full ${statusInfo.color}"></div>
+                                <span class="text-sm text-gray-400">${statusInfo.text}</span>
+                            </div>
+                        </div>`;
+                }
+                const statusCategoryHTML = `
+                    <div class="mb-8">
+                        <h3 class="text-md font-semibold text-gray-300 mb-3">${categoryName}</h3>
+                        <div class="bg-dark-card border border-dark-border rounded-xl divide-y divide-dark-border">${statusItemsHTML}</div>
+                    </div>`;
+                statusContainer.innerHTML += statusCategoryHTML;
+
+                // --- Build Products Page HTML ---
+                let productItemsHTML = '';
+                for (const product of categories[categoryName]) {
+                     const productStatusInfo = statusMap[product.productStatus] || { text: 'Unknown', color: 'bg-gray-500' };
+                     productItemsHTML += `
+                        <div class="flex justify-between items-center p-4 sm:p-6">
+                            <h4 class="font-semibold text-white">${product.name}</h4>
+                            <div class="flex items-center space-x-2">
+                                <div class="h-2.5 w-2.5 rounded-full ${productStatusInfo.color}"></div>
+                                <span class="text-sm text-gray-400">${productStatusInfo.text}</span>
+                            </div>
+                        </div>`;
+                }
+                const productCategoryHTML = `
+                     <div class="mb-8">
+                        <h3 class="text-md font-semibold text-gray-300 mb-3">${categoryName}</h3>
+                        <div class="bg-dark-card border border-dark-border rounded-xl divide-y divide-dark-border">${productItemsHTML}</div>
+                    </div>`;
+                productsContainer.innerHTML += productCategoryHTML;
+            }
+        }
+
+        // --- NAVIGATION ---
         function showPage(pageId, element) {
             // Hide all page content
             document.querySelectorAll('.page-content').forEach(page => {
@@ -161,6 +230,11 @@
             element.classList.add('text-brand-red', 'bg-brand-red/10', 'font-semibold');
             element.classList.remove('text-gray-400');
         }
+
+        // --- INITIALIZATION ---
+        // Render the pages as soon as the document is loaded.
+        document.addEventListener('DOMContentLoaded', renderPages);
+
     </script>
 
 </body>

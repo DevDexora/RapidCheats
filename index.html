@@ -23,6 +23,7 @@
                         'dark-bg': '#101010',
                         'dark-card': '#181818',
                         'dark-border': '#262626',
+                        'status-green': '#10B981',
                     }
                 }
             }
@@ -37,7 +38,7 @@
             <div>
                 <!-- Logo -->
                 <div class="mb-12">
-                    <h1 class="text-white text-3xl font-bold tracking-wider">LC</h1>
+                    <img src="https://media.discordapp.net/attachments/1407497073099804682/1407604855199236107/logo.png?ex=68a6b5ad&is=68a5642d&hm=12948981f3c33e1ba5a8566d0e1c0ee1f503a6bae61e69c9e69a7ae1967c087e&=&format=webp&quality=lossless" alt="LC Logo" class="h-9 w-auto">
                 </div>
 
                 <!-- Navigation Links -->
@@ -53,96 +54,54 @@
                         <span>Status</span>
                     </a>
                     <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
-                        <!-- Discord Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-1.162A9.945 9.945 0 0 0 12 22z"/></svg>
-                        <span>Discord</span>
-                    </a>
-                    <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
-                        <!-- Licenses Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><path d="M8 12h8"/></svg>
-                        <span>Licenses</span>
-                    </a>
-                    <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
-                        <!-- Purchase Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                        <span>Purchase</span>
+                        <!-- Products Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        <span>Products</span>
                     </a>
                 </nav>
-            </div>
-            
-            <!-- Logout Button -->
-            <div class="mt-auto">
-                <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
-                    <!-- Logout Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-                    <span>Logout</span>
-                </a>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="flex-1 p-8 sm:p-10">
-            <!-- Stats Cards -->
+             <!-- Stats Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
                     <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                     <div>
                         <p class="text-sm text-gray-400">USERS</p>
-                        <p class="text-2xl font-semibold text-white">60K</p>
+                        <p class="text-2xl font-semibold text-white">0</p>
                     </div>
                 </div>
                 <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
                     <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.5 16.5 3.5 3.5L8 22l-6-6 8-8 3.5 3.5Z"/><path d="m18 12 2-2"/><path d="m12 6 2-2"/><path d="m6 12 2-2"/><path d="m12 18 2-2"/></svg></div>
                     <div>
                         <p class="text-sm text-gray-400">LICENSES</p>
-                        <p class="text-2xl font-semibold text-white">98K</p>
+                        <p class="text-2xl font-semibold text-white">0</p>
                     </div>
                 </div>
                 <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
                     <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12"cy="12" r="2"/></svg></div>
                     <div>
                         <p class="text-sm text-gray-400">CHEATS</p>
-                        <p class="text-2xl font-semibold text-white">5</p>
+                        <p class="text-2xl font-semibold text-white">1</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Announcements Section -->
+            <!-- Products Section -->
             <div>
-                <h2 class="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                    <span>ANNOUNCEMENTS</span>
-                </h2>
-                <div class="bg-dark-card border border-dark-border rounded-xl p-2 sm:p-4">
-                    <div class="space-y-4">
-                        <!-- Announcement Item 1 -->
-                        <div class="flex justify-between items-start p-4 hover:bg-white/5 rounded-lg transition-colors">
-                            <div>
-                                <h3 class="font-semibold text-white">R6 Lite & Full Unpaused</h3>
-                                <p class="text-sm text-gray-400 mt-1">R6 Lite & Full have been unpaused.</p>
-                            </div>
-                            <p class="text-sm text-gray-500 flex-shrink-0 ml-4">14/08/2025, 18:53</p>
-                        </div>
-                        <!-- Announcement Item 2 -->
-                        <div class="flex justify-between items-start p-4 hover:bg-white/5 rounded-lg transition-colors">
-                            <div>
-                                <h3 class="font-semibold text-white">R6 Full & Lite updated</h3>
-                                <p class="text-sm text-gray-400 mt-1">R6 Full & Lite updated for todays game update.</p>
-                                <p class="text-sm text-gray-400 mt-1">If your build does not work, play on a different game account or wait for it to be fixed.</p>
-                                <p class="text-sm text-gray-500 mt-2">Time still paused.</p>
-                            </div>
-                            <p class="text-sm text-gray-500 flex-shrink-0 ml-4">21/07/2025, 19:34</p>
-                        </div>
-                        <!-- Announcement Item 3 -->
-                        <div class="flex justify-between items-start p-4 hover:bg-white/5 rounded-lg transition-colors">
-                            <div>
-                                <h3 class="font-semibold text-white">Update Reviewed</h3>
-                                <p class="text-sm text-gray-400 mt-1">Battleye update has been reviewed.</p>
-                                <p class="text-sm text-gray-400 mt-1">Reboot your PC and reload to stop game from closing start of the first round.</p>
-                            </div>
-                            <p class="text-sm text-gray-500 flex-shrink-0 ml-4">20/07/2025, 18:33</p>
+                <h2 class="text-lg font-semibold text-white mb-4">PRODUCTS</h2>
+                <div class="bg-dark-card border border-dark-border rounded-xl">
+                    <!-- Product Item -->
+                    <div class="flex justify-between items-center p-4 sm:p-6 border-b border-dark-border">
+                        <h3 class="font-semibold text-white">Aurora R6 Full</h3>
+                        <div class="flex items-center space-x-2">
+                            <div class="h-2.5 w-2.5 rounded-full bg-status-green"></div>
+                            <span class="text-sm text-gray-400">Online</span>
                         </div>
                     </div>
+                    <!-- New products will be added here -->
                 </div>
             </div>
         </main>

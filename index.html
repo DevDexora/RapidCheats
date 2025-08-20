@@ -42,18 +42,18 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <nav class="space-y-2">
-                    <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-brand-red bg-brand-red/10 font-semibold">
+                <nav id="sidebar-nav" class="space-y-2">
+                    <a href="javascript:void(0)" onclick="showPage('dashboard-page', this)" class="nav-link flex items-center space-x-3 px-4 py-2.5 rounded-lg text-brand-red bg-brand-red/10 font-semibold">
                         <!-- Dashboard Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                         <span>Dashboard</span>
                     </a>
-                    <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
+                    <a href="javascript:void(0)" onclick="showPage('status-page', this)" class="nav-link flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
                         <!-- Status Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                         <span>Status</span>
                     </a>
-                    <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
+                    <a href="javascript:void(0)" onclick="showPage('products-page', this)" class="nav-link flex items-center space-x-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-dark-card hover:text-white transition-colors">
                         <!-- Products Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                         <span>Products</span>
@@ -64,33 +64,51 @@
 
         <!-- Main Content -->
         <main class="flex-1 p-8 sm:p-10">
-             <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
-                    <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                    <div>
-                        <p class="text-sm text-gray-400">USERS</p>
-                        <p class="text-2xl font-semibold text-white">0</p>
+            <!-- Dashboard Page Content -->
+            <div id="dashboard-page" class="page-content">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
+                        <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <div>
+                            <p class="text-sm text-gray-400">USERS</p>
+                            <p class="text-2xl font-semibold text-white">0</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
+                        <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.5 16.5 3.5 3.5L8 22l-6-6 8-8 3.5 3.5Z"/><path d="m18 12 2-2"/><path d="m12 6 2-2"/><path d="m6 12 2-2"/><path d="m12 18 2-2"/></svg></div>
+                        <div>
+                            <p class="text-sm text-gray-400">LICENSES</p>
+                            <p class="text-2xl font-semibold text-white">0</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
+                        <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12"cy="12" r="2"/></svg></div>
+                        <div>
+                            <p class="text-sm text-gray-400">CHEATS</p>
+                            <p class="text-2xl font-semibold text-white">1</p>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
-                    <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.5 16.5 3.5 3.5L8 22l-6-6 8-8 3.5 3.5Z"/><path d="m18 12 2-2"/><path d="m12 6 2-2"/><path d="m6 12 2-2"/><path d="m12 18 2-2"/></svg></div>
-                    <div>
-                        <p class="text-sm text-gray-400">LICENSES</p>
-                        <p class="text-2xl font-semibold text-white">0</p>
-                    </div>
-                </div>
-                <div class="bg-dark-card border border-dark-border rounded-xl p-6 flex items-center space-x-5">
-                    <div class="p-3 bg-brand-red/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12"cy="12" r="2"/></svg></div>
-                    <div>
-                        <p class="text-sm text-gray-400">CHEATS</p>
-                        <p class="text-2xl font-semibold text-white">1</p>
+                <!-- Announcements Section -->
+                <div>
+                    <h2 class="text-lg font-semibold text-white mb-4">ANNOUNCEMENTS</h2>
+                    <div class="bg-dark-card border border-dark-border rounded-xl p-2 sm:p-4 min-h-[200px] flex items-center justify-center">
+                        <p class="text-gray-500">No announcements at this time.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Products Section -->
-            <div>
+            <!-- Status Page Content -->
+            <div id="status-page" class="page-content hidden">
+                 <h2 class="text-lg font-semibold text-white mb-4">STATUS</h2>
+                 <div class="bg-dark-card border border-dark-border rounded-xl p-6 min-h-[200px] flex items-center justify-center">
+                    <p class="text-gray-500">Status page content goes here.</p>
+                </div>
+            </div>
+
+            <!-- Products Page Content -->
+            <div id="products-page" class="page-content hidden">
                 <h2 class="text-lg font-semibold text-white mb-4">PRODUCTS</h2>
                 <div class="bg-dark-card border border-dark-border rounded-xl">
                     <!-- Product Item -->
@@ -106,6 +124,30 @@
             </div>
         </main>
     </div>
+
+    <script>
+        function showPage(pageId, element) {
+            // Hide all page content
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            // Show the selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.remove('hidden');
+            }
+            
+            // Update active link styling
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-brand-red', 'bg-brand-red/10', 'font-semibold');
+                link.classList.add('text-gray-400');
+            });
+            
+            element.classList.add('text-brand-red', 'bg-brand-red/10', 'font-semibold');
+            element.classList.remove('text-gray-400');
+        }
+    </script>
 
 </body>
 </html>
